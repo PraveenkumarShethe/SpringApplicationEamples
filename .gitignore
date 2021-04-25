@@ -1,0 +1,14 @@
+*.project
+*.classpath
+bin
+/target/*
+.wtpmodules
+.settings
+
+/service-installer-suit/.idea/*
+*.project
+*.classpath
+bin
+/target/*
+.wtpmodules
+.settings

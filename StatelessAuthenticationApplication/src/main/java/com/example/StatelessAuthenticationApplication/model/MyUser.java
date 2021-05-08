@@ -1,5 +1,6 @@
 package com.example.StatelessAuthenticationApplication.model;
 
+import org.springframework.security.core.CredentialsContainer;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -9,15 +10,13 @@ import java.util.Collection;
 /**
  * Created by Praveenkumar on 5/8/2021.
  */
-public class MyUser extends AbstractEntity implements UserDetails {
+public class MyUser extends AbstractEntity implements UserDetails, CredentialsContainer {
 
     private static final long serialVersionUID = 2396654715019746670L;
 
-    String username;
-    String password;
+    @Override
+    public void eraseCredentials() {
 
-    public static MyUser withDefaultPasswordEncoder() {
-        return null;
     }
 
     @Override
@@ -53,9 +52,5 @@ public class MyUser extends AbstractEntity implements UserDetails {
     @Override
     public boolean isEnabled() {
         return false;
-    }
-
-    public ConnectionBuilder username(String user) {
-        return null;
     }
 }

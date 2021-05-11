@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(value = "/demo", produces = MediaType.APPLICATION_JSON_VALUE)
 public class DemoController {
 
-    @RequestMapping(method = RequestMethod.GET, value = "/greetings", produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(method = RequestMethod.GET, value = "/", produces = MediaType.APPLICATION_JSON_VALUE)
     public String greetings(){
-        return "Hello, Pal !!!";
+        return "<h1>Hello, Pal !!!<h1>";
     }
 
 }

@@ -4,7 +4,6 @@ import org.springframework.security.core.CredentialsContainer;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import java.sql.ConnectionBuilder;
 import java.util.Collection;
 
 /**

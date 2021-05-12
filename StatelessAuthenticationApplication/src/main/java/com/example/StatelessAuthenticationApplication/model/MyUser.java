@@ -3,10 +3,10 @@ package com.example.StatelessAuthenticationApplication.model;
 import com.example.StatelessAuthenticationApplication.security.UserAuthority;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import jdk.nashorn.internal.ir.annotations.Ignore;
 import org.springframework.security.core.CredentialsContainer;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import jdk.nashorn.internal.ir.annotations.Ignore;
 
 import javax.persistence.Column;
 import javax.persistence.JoinColumn;

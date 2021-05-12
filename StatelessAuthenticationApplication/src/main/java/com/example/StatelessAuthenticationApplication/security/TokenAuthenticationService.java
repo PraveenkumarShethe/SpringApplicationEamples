@@ -1,9 +1,13 @@
 package com.example.StatelessAuthenticationApplication.security;
 
+import com.example.StatelessAuthenticationApplication.model.MyUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.xml.bind.DatatypeConverter;
 
 /**
@@ -22,8 +26,8 @@ public class TokenAuthenticationService {
         tokenHandler = new TokenHandler(DatatypeConverter.parseBase64Binary(secret));
     }
 
-    public void addAuthenticationTokenInHeader(HttpServletResponse response, UpayogakartaAuthentication authentication) {
-        final Upayogakarta user = (Upayogakarta) authentication.getDetails();
+    public void addAuthenticationTokenInHeader(HttpServletResponse response, UserAuthenticationException authentication) {
+        final MyUser user = authentication.getDetails();
         user.setExpires(System.currentTimeMillis() + TEN_DAYS);
         response.addHeader(AUTH_HEADER_NAME, tokenHandler.createTokenForUser(user));
     }
@@ -31,7 +35,7 @@ public class TokenAuthenticationService {
     public Authentication getAuthenticationFromHeader(HttpServletRequest request) {
         final String token = request.getHeader(AUTH_HEADER_NAME);
         if (token != null) {
-            final Upayogakarta user = tokenHandler.parseUserFromToken(token);
+            final MyUser user = tokenHandler.parseUserFromToken(token);
             if (user != null) {
                 return new UserAuthentication(user);
             }

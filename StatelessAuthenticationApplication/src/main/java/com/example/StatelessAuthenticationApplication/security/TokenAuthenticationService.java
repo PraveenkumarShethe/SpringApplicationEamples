@@ -26,8 +26,8 @@ public class TokenAuthenticationService {
         tokenHandler = new TokenHandler(DatatypeConverter.parseBase64Binary(secret));
     }
 
-    public void addAuthenticationTokenInHeader(HttpServletResponse response, UserAuthenticationException authentication) {
-        final MyUser user = authentication.getDetails();
+    public void addAuthenticationTokenInHeader(HttpServletResponse response, UserAuthentication authentication) {
+        final MyUser user = (MyUser) authentication.getDetails();
         user.setExpires(System.currentTimeMillis() + TEN_DAYS);
         response.addHeader(AUTH_HEADER_NAME, tokenHandler.createTokenForUser(user));
     }

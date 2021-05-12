@@ -1,5 +1,6 @@
 package com.example.StatelessAuthenticationApplication.security;
 
+import com.example.StatelessAuthenticationApplication.model.MyUser;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.core.AuthenticationException;
@@ -38,4 +39,7 @@ public class UserAuthenticationException extends AuthenticationException {
         logger.info(logMessage);
     }
 
+    public MyUser getDetails() {
+        return null;
+    }
 }

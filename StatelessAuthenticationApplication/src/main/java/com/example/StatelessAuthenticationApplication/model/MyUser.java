@@ -8,14 +8,19 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
 import java.util.ArrayList;
 import java.util.Collection;
 
 /**
  * Created by Praveenkumar on 5/8/2021.
  */
+@Entity
+@Table(name = "my_user")
 public class MyUser extends AbstractEntity implements UserDetails, CredentialsContainer {
 
     private static final long serialVersionUID = 2396654715019746670L;

@@ -21,16 +21,16 @@ public class MyUserDetailService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         User user;
-        final MyUser upayogakarta = userRepository.findByUsername(username);
-        if (upayogakarta != null) {
+        final MyUser myUser = userRepository.findByUsername(username);
+        if (myUser != null) {
             user = new User(
-                    upayogakarta.getUsername(),
-                    upayogakarta.getPassword(),
-                    upayogakarta.isEnabled(),
-                    upayogakarta.isAccountNonExpired(),
-                    upayogakarta.isCredentialsNonExpired(),
-                    upayogakarta.isAccountNonLocked(),
-                    upayogakarta.getAuthorities()
+                    myUser.getUsername(),
+                    myUser.getPassword(),
+                    myUser.isEnabled(),
+                    myUser.isAccountNonExpired(),
+                    myUser.isCredentialsNonExpired(),
+                    myUser.isAccountNonLocked(),
+                    myUser.getAuthorities()
             );
         } else {
             throw new UserAuthenticationException("This Upayogakarta was not found");

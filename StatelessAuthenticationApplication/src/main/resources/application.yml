@@ -29,10 +29,12 @@ spring:
 logging:
   file: securityDemo.log
   level:
-    org.springframework: OFF
-    org.hibernate: OFF
-    com.praveen.shethe: OFF
-    b.c.e.u.UndertowEmbeddedServletContainer: OFF
+    org.springframework: DEBUG
+    org.hibernate: DEBUG
+    com.example: DEBUG
+    b.c.e.u.UndertowEmbeddedServletContainer: DEBUG
+    org.springframework.boot.autoconfigure: ERROR
+
 ---
 #Properties for the "prod" profile, to be used by developers on their laptop
 spring:

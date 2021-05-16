@@ -26,7 +26,7 @@ public class StatelessAuthWebAppInitializer implements WebApplicationInitializer
 
     private AnnotationConfigWebApplicationContext getContext() {
         AnnotationConfigWebApplicationContext context = new AnnotationConfigWebApplicationContext();
-        context.setConfigLocation("com.praveen.shethe.config.WebapplicationConfiguration");
+        context.setConfigLocation("com.example.StatelessAuthenticationApplication.config.StatelessWebapplicationConfiguration");
         return context;
     }
 }

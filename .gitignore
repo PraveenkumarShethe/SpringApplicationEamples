@@ -38,3 +38,4 @@ StatelessAuthentication/mvnw.cmd
 StatelessAuthentication/mvnw
 StatelessAuthentication/.gitignore
 Spring_Boot_Apache_Kafka/.gitignore
+Spring_Boot_Apache_Kafka/gradle/wrapper/gradle-wrapper.jar

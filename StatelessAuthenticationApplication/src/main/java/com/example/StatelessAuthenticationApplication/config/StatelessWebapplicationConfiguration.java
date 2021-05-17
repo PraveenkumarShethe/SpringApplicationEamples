@@ -22,8 +22,8 @@ import java.io.IOException;
 @ComponentScan(basePackages = "com.example.StatelessAuthenticationApplication")
 @EnableJpaRepositories("com.example.StatelessAuthenticationApplication.repository")
 @EnableWebMvc
-@ConfigurationProperties(value = "classpath:/application.yml")
-public class WebapplicationConfiguration {
+@ConfigurationProperties(value = "application.yml")
+public class StatelessWebapplicationConfiguration {
 
     @Bean
     public InternalResourceViewResolver getInternalResourceViewResolver() {

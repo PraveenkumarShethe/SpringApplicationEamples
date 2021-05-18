@@ -1,4 +1,4 @@
-package com.praveenkumar.shethe.Spring_Boot_Apache_Kafka;
+package com.praveenkumar.shethe.Spring_Boot_Apache_Kafka.controller;
 
 import com.praveenkumar.shethe.Spring_Boot_Apache_Kafka.service.KafkaSender;
 import org.springframework.beans.factory.annotation.Autowired;

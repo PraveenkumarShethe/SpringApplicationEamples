@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class KafkaSender {
 
-
+//  https://www.javainuse.com/spring/spring-boot-apache-kafka-hello-world
     @Autowired
     private KafkaTemplate<String, String> kafkaTemplate;
 

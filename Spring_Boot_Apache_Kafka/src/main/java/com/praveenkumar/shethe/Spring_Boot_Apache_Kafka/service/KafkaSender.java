@@ -1,5 +1,7 @@
 package com.praveenkumar.shethe.Spring_Boot_Apache_Kafka.service;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
@@ -10,14 +12,16 @@ import org.springframework.stereotype.Service;
 @Service
 public class KafkaSender {
 
-//  https://www.javainuse.com/spring/spring-boot-apache-kafka-hello-world
+    String kafkaTopic = "message-topic";
+
+    private final Logger logger = LogManager.getLogger(KafkaSender.class);
+    //  https://www.javainuse.com/spring/spring-boot-apache-kafka-hello-world
+
     @Autowired
     private KafkaTemplate<String, String> kafkaTemplate;
 
-    String kafkaTopic = "message-topic";
-
     public void send(String message) {
-
+        logger.info("Controller: Inside the producer method");
         kafkaTemplate.send(kafkaTopic, message);
     }
 }

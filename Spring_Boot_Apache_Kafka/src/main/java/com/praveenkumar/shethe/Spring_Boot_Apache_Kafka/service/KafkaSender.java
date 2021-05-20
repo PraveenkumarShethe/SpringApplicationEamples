@@ -21,7 +21,7 @@ public class KafkaSender {
     private KafkaTemplate<String, String> kafkaTemplate;
 
     public void send(String message) {
-        logger.info("Controller: Inside the producer method");
+        logger.info("Service: Inside the producer method");
         kafkaTemplate.send(kafkaTopic, message);
     }
 }

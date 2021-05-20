@@ -3,6 +3,8 @@ package com.example.StatelessAuthenticationApplication.security;
 import com.example.StatelessAuthenticationApplication.model.MyUser;
 import com.example.StatelessAuthenticationApplication.repository.MyUserRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -24,6 +26,9 @@ import java.io.IOException;
  * Created by Praveenkumar on 5/12/2021.
  */
 public class StatelessLoginFilter extends AbstractAuthenticationProcessingFilter {
+
+    private static final Logger logger = LoggerFactory.getLogger(StatelessLoginFilter.class);
+
     @Autowired
     private TokenAuthenticationService tokenAuthenticationService;
 
@@ -39,6 +44,7 @@ public class StatelessLoginFilter extends AbstractAuthenticationProcessingFilter
             MyUserDetailService myUserDetailService,
             AuthenticationManager authenticationManager) {
         super(new AntPathRequestMatcher(defaultFilterProcessesUrl));
+        logger.info("StatelessLoginFilter");
         this.myUserDetailService = myUserDetailService;
         this.tokenAuthenticationService = tokenAuthenticationService;
         setAuthenticationManager(authenticationManager);
@@ -48,6 +54,7 @@ public class StatelessLoginFilter extends AbstractAuthenticationProcessingFilter
                                 TokenAuthenticationService tokenAuthenticationService,
                                 AuthenticationManager authManager) {
         super(new AntPathRequestMatcher(urlMapping));
+        logger.info(" StatelessLoginFilter ");
         this.tokenAuthenticationService = tokenAuthenticationService;
         setAuthenticationManager(authManager);
     }
@@ -59,6 +66,7 @@ public class StatelessLoginFilter extends AbstractAuthenticationProcessingFilter
             HttpServletRequest request,
             HttpServletResponse response)
             throws AuthenticationException, IOException, ServletException {
+        logger.info(" attemptAuthentication ");
 
         final MyUser user = new ObjectMapper().readValue(request.getInputStream(), MyUser.class);
         final UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = new UsernamePasswordAuthenticationToken(
@@ -71,6 +79,7 @@ public class StatelessLoginFilter extends AbstractAuthenticationProcessingFilter
     @Override
     protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response, FilterChain chain,
                                             Authentication authentication) throws IOException, ServletException {
+        logger.info(" successfulAuthentication ");
         final MyUser user = myUserDetailService.getMyUser(myUserDetailService.loadUserByUsername(authentication.getName()));
         final UserAuthentication userAuthentication = new UserAuthentication(user);
         tokenAuthenticationService.addAuthenticationTokenInHeader(response, userAuthentication);

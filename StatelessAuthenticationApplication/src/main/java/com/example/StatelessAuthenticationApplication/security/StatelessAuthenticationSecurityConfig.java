@@ -1,5 +1,7 @@
 package com.example.StatelessAuthenticationApplication.security;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpMethod;
@@ -19,6 +21,8 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
  */
 public class StatelessAuthenticationSecurityConfig extends WebSecurityConfigurerAdapter {
 
+    private static final Logger logger = LoggerFactory.getLogger(StatelessAuthenticationSecurityConfig.class);
+
     @Autowired
     private TokenAuthenticationService tokenAuthenticationService;
 
@@ -28,8 +32,8 @@ public class StatelessAuthenticationSecurityConfig extends WebSecurityConfigurer
 
     @Bean
     public StatelessLoginFilter statelessTokenBasedLoginFilter() throws AuthenticationException {
+        logger.info(" statelessTokenBasedLoginFilter ");
         StatelessLoginFilter statelessTokenBasedLoginFilter;
-
         try {
             statelessTokenBasedLoginFilter = new StatelessLoginFilter(
                     "/login/authenticate", //TODO: Take this into YAML
@@ -57,6 +61,7 @@ public class StatelessAuthenticationSecurityConfig extends WebSecurityConfigurer
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+        logger.info(" Configure method ");
         http
                 .addFilterBefore(anonymousFilter(), AnonymousAuthenticationFilter.class)
                 .authorizeRequests()

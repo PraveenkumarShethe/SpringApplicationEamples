@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
  * Created by Praveenkumar on 5/17/2021.
  */
 @RestController
-@RequestMapping(value = "/javainuse-kafka/")
+@RequestMapping(value = "/kafkamessage")
 public class KafkaController {
 
     @Autowired

@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class KafkaSender {
 
-    String kafkaTopic = "message-topic";
+    String kafkaTopic = "MessageTopic";
 
     private final Logger logger = LogManager.getLogger(KafkaSender.class);
     //  https://www.javainuse.com/spring/spring-boot-apache-kafka-hello-world

@@ -11,10 +11,10 @@
 .\bin\windows\kafka-server-start.bat .\config\server.properties
 
 ##################### To Create topic #####################
-C:\kafka-2.12\bin\windows>kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic test
+kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic test
 
 #####################  Start Producer #####################
-C:\kafka-2.12\bin\windows>kafka-console-producer.bat --broker-list localhost:9092 --topic test
+kafka-console-producer.bat --broker-list localhost:9092 --topic test
 
 ##################### To create consumer #####################
 C:\kafka-2.12\bin\windows>kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic test --from-beginning

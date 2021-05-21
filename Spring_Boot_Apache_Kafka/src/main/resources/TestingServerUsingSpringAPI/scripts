@@ -29,7 +29,7 @@ kafka-topics --zookeeper localhost:2181 --list
 kafka-topics.bat --describe --zookeeper localhost:2181 --topic test
 
 ##################### To delete topic test created in system #####################
-C:\kafka-2.12\bin\windows>kafka-run-class.bat kafka.admin.TopicCommand --delete --topic test --zookeeper localhost:2181
+kafka-run-class.bat kafka.admin.TopicCommand --delete --topic test --zookeeper localhost:2181
 
 ##################### To read message from beginning of topic test created in system(version>2.0) #####################
 C:\kafka-2.12\bin\windows>kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic test --from-beginn

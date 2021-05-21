@@ -26,7 +26,7 @@ kafka-topics --zookeeper localhost:2181 --topic first_topic --create --partition
 kafka-topics --zookeeper localhost:2181 --list
 
 ##################### To get the description of topic created in system #####################
-C:\kafka-2.12\bin\windows>kafka-topics.bat --describe --zookeeper localhost:2181 --topic test
+kafka-topics.bat --describe --zookeeper localhost:2181 --topic test
 
 ##################### To delete topic test created in system #####################
 C:\kafka-2.12\bin\windows>kafka-run-class.bat kafka.admin.TopicCommand --delete --topic test --zookeeper localhost:2181

@@ -78,3 +78,8 @@ out/
 ### VS Code ###
 .vscode/
 
+Spring_boot_Apache_Kafka_listener/gradle/wrapper/gradle-wrapper.properties
+Spring_boot_Apache_Kafka_listener/gradlew
+Spring_boot_Apache_Kafka_listener/gradlew.bat
+Spring_boot_Apache_Kafka_listener/gradle/wrapper/gradle-wrapper.jar
+Spring_boot_Apache_Kafka_listener/settings.gradle

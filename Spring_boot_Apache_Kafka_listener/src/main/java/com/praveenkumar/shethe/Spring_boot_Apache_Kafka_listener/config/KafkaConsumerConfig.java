@@ -21,7 +21,7 @@ public class KafkaConsumerConfig {
 
     private final String bootstrapAddress = "localhost:9092";
 
-    private final String groupId = "123";
+    private final String groupId = "groupId";
 
     @Bean
     public ConsumerFactory<String, String> consumerFactory() {

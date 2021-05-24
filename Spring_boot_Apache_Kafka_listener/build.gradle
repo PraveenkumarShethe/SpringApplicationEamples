@@ -17,7 +17,8 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.security:spring-security-test'
 	implementation 'junit:junit:4.12'
-	// https://mvnrepository.com/artifact/org.apache.kafka/kafka
+	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-server'	// https://mvnrepository.com/artifact/org.apache.kafka/kafka
 	implementation group: 'org.springframework.kafka', name: 'spring-kafka'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 

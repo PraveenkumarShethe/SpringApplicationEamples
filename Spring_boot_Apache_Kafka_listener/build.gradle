@@ -8,22 +8,30 @@ group = 'com.praveenkumar.shethe'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
 
+ext {
+	set('springCloudVersion', "2020.0.0")
+}
+
 repositories {
 	mavenCentral()
 }
-
+// https://mvnrepository.com/artifact/org.apache.kafka/kafka
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation 'org.springframework.security:spring-security-test'
+	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-server'
 	implementation 'junit:junit:4.12'
 	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
-	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-server'	// https://mvnrepository.com/artifact/org.apache.kafka/kafka
 	implementation group: 'org.springframework.kafka', name: 'spring-kafka'
+	implementation 'org.springframework.security:spring-security-test'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
 }
-
+dependencyManagement {
+	imports {
+		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+	}
+}
 test {
 	useJUnitPlatform()
 }

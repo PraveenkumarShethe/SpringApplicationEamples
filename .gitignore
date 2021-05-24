@@ -123,3 +123,8 @@ out/
 ### VS Code ###
 .vscode/
 EurekaDiscoveryServerClientExample/.gitignore
+EurekaDiscoveryServerClientExample/gradlew
+EurekaDiscoveryServerClientExample/gradlew.bat
+EurekaDiscoveryServerClientExample/settings.gradle
+EurekaDiscoveryServerClientExample/gradle/wrapper/gradle-wrapper.jar
+EurekaDiscoveryServerClientExample/gradle/wrapper/gradle-wrapper.properties

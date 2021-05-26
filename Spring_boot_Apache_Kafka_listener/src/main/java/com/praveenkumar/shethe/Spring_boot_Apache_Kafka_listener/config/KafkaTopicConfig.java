@@ -16,7 +16,7 @@ import java.util.Map;
 @Configuration
 public class KafkaTopicConfig {
 
-    @Value(value = "MessageTopic")
+    @Value(value = "${kafka.bootstrapAddress}")
     private String bootstrapAddress;
 
     @Bean
@@ -28,6 +28,6 @@ public class KafkaTopicConfig {
 
     @Bean
     public NewTopic topic1() {
-        return new NewTopic("baeldung", 1, (short) 1);
+        return new NewTopic("MessageTopic", 1, (short) 1);
     }
 }

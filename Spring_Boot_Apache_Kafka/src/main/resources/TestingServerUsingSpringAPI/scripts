@@ -11,13 +11,13 @@
 .\bin\windows\kafka-server-start.bat .\config\server.properties
 
 ##################### To Create topic #####################
-kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic test
+kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic MessageTopic
 
 #####################  Start Producer #####################
-kafka-console-producer.bat --broker-list localhost:9092 --topic test
+kafka-console-producer.bat --broker-list localhost:9092 --topic MessageTopic
 
 ##################### To create consumer #####################
-kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic test --from-beginning
+kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic MessageTopic --from-beginning
 
 ##################### Topic creation With multi partition with replication factor 1 #####################
 kafka-topics --zookeeper localhost:2181 --topic first_topic --create --partitions 3 --replication-factor 1
@@ -26,13 +26,13 @@ kafka-topics --zookeeper localhost:2181 --topic first_topic --create --partition
 kafka-topics --zookeeper localhost:2181 --list
 
 ##################### To get the description of topic created in system #####################
-kafka-topics.bat --describe --zookeeper localhost:2181 --topic test
+kafka-topics.bat --describe --zookeeper localhost:2181 --topic MessageTopic
 
 ##################### To delete topic test created in system #####################
-kafka-run-class.bat kafka.admin.TopicCommand --delete --topic test --zookeeper localhost:2181
+kafka-run-class.bat kafka.admin.TopicCommand --delete --topic MessageTopic --zookeeper localhost:2181
 
 ##################### To read message from beginning of topic test created in system(version>2.0) #####################
-kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic test --from-beginn
+kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic MessageTopic --from-beginn
 
 ###############################################################
 .\bin\windows\kafka-server-start.bat .\config\server.properties

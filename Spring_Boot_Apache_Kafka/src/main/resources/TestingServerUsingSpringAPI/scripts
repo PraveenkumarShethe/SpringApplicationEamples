@@ -16,7 +16,7 @@ kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --pa
 #####################  Start Producer #####################
 kafka-console-producer.bat --broker-list localhost:9092 --topic MessageTopic
 
-##################### To create consumer #####################
+##################### To start consumer #####################
 kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic MessageTopic --from-beginning
 
 ##################### Topic creation With multi partition with replication factor 1 #####################
@@ -37,5 +37,5 @@ kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic MessageTopi
 ###############################################################
 .\bin\windows\kafka-server-start.bat .\config\server.properties
 zkserver
-http://localhost:8081//javainuse-kafka/producer?message=test
+http://localhost:8081/kafkamessage/producer?message=test
 ###############################################################

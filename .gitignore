@@ -215,3 +215,5 @@ ZuulDemo/gradlew
 ZuulDemo/gradlew.bat
 ZuulDemo/settings.gradle
 ZuulDemoServer/settings.gradle
+ZuulDemoServer/gradle/wrapper/gradle-wrapper.jar
+ZuulDemoServer/gradle/wrapper/gradle-wrapper.properties

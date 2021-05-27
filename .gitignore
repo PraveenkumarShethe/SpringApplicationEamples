@@ -211,3 +211,7 @@ ZuulDemo/gradle/wrapper/gradle-wrapper.properties
 ZuulDemoServer/.gitignore
 ZuulDemoServer/gradlew
 ZuulDemoServer/gradlew.bat
+ZuulDemo/gradlew
+ZuulDemo/gradlew.bat
+ZuulDemo/settings.gradle
+ZuulDemoServer/settings.gradle

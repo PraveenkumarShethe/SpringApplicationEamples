@@ -217,3 +217,10 @@ ZuulDemo/settings.gradle
 ZuulDemoServer/settings.gradle
 ZuulDemoServer/gradle/wrapper/gradle-wrapper.jar
 ZuulDemoServer/gradle/wrapper/gradle-wrapper.properties
+/.metadata/
+FileDownload/.gitignore
+FileDownload/mvnw
+FileDownload/mvnw.cmd
+FileDownload/.mvn/wrapper/maven-wrapper.jar
+FileDownload/.mvn/wrapper/maven-wrapper.properties
+FileDownload/.mvn/wrapper/MavenWrapperDownloader.java

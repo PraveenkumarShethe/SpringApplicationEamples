@@ -229,3 +229,9 @@ EmployeeCrudOpertion/gradlew.bat
 EmployeeCrudOpertion/settings.gradle
 EmployeeCrudOpertion/gradle/wrapper/gradle-wrapper.jar
 EmployeeCrudOpertion/gradle/wrapper/gradle-wrapper.properties
+EmployeeGateWaySecurity/build.gradle
+EmployeeGateWaySecurity/gradlew
+EmployeeGateWaySecurity/gradlew.bat
+EmployeeGateWaySecurity/settings.gradle
+EmployeeGateWaySecurity/gradle/wrapper/gradle-wrapper.jar
+EmployeeGateWaySecurity/gradle/wrapper/gradle-wrapper.properties

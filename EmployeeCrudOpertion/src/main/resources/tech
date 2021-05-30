@@ -1,0 +1,9 @@
+eureka
+kafka
+java future
+java webclient(spring boot)
+spring cloud config
+zuul(reverse proxy)
+hystrix( circuit breaker)
+zipkin and sleuth( service tracking)
+JUNIT 5 n Mockito 

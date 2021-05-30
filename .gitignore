@@ -224,3 +224,8 @@ FileDownload/mvnw.cmd
 FileDownload/.mvn/wrapper/maven-wrapper.jar
 FileDownload/.mvn/wrapper/maven-wrapper.properties
 FileDownload/.mvn/wrapper/MavenWrapperDownloader.java
+EmployeeCrudOpertion/gradlew
+EmployeeCrudOpertion/gradlew.bat
+EmployeeCrudOpertion/settings.gradle
+EmployeeCrudOpertion/gradle/wrapper/gradle-wrapper.jar
+EmployeeCrudOpertion/gradle/wrapper/gradle-wrapper.properties

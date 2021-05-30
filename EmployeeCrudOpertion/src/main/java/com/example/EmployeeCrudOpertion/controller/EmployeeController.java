@@ -5,6 +5,7 @@ import com.example.EmployeeCrudOpertion.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -26,5 +27,11 @@ public class EmployeeController {
     @ResponseStatus(HttpStatus.OK)
     public List<Employee> getAllEmployee(){
         return employeeService.getAllEmployee();
+    }
+
+    @RequestMapping(method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseStatus(HttpStatus.CREATED)
+    public void saveEmployee(@RequestBody Employee employee){
+        employeeService.saveEmployee(employee);
     }
 }

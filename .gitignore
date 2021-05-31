@@ -235,3 +235,4 @@ EmployeeGateWaySecurity/gradlew.bat
 EmployeeGateWaySecurity/settings.gradle
 EmployeeGateWaySecurity/gradle/wrapper/gradle-wrapper.jar
 EmployeeGateWaySecurity/gradle/wrapper/gradle-wrapper.properties
+ZuulEample/**

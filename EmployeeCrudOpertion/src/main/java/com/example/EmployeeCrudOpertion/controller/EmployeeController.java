@@ -2,6 +2,8 @@ package com.example.EmployeeCrudOpertion.controller;
 
 import com.example.EmployeeCrudOpertion.model.Employee;
 import com.example.EmployeeCrudOpertion.service.EmployeeService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -21,8 +23,16 @@ import java.util.List;
 @RequestMapping(value = "employee")
 public class EmployeeController {
 
+    Logger logger = LoggerFactory.getLogger(EmployeeController.class);
+
     @Autowired
     private EmployeeService employeeService;
+
+    @RequestMapping(value = "/login", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseStatus(HttpStatus.OK)
+    public void employeeLogin(@RequestBody Employee employee){
+        logger.info(employee.getUsername() + "                     " + employee.getPassword());
+    }
 
     @RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)

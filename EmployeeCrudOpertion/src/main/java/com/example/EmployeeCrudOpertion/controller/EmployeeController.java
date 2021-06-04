@@ -20,7 +20,7 @@ import java.util.List;
  * Created by Praveenkumar on 5/30/2021.
  */
 @RestController
-@RequestMapping(value = "employee")
+@RequestMapping(value = "/employee")
 public class EmployeeController {
 
     Logger logger = LoggerFactory.getLogger(EmployeeController.class);
@@ -43,6 +43,7 @@ public class EmployeeController {
     @RequestMapping(method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.CREATED)
     public void saveEmployee(@RequestBody Employee employee){
+
         employeeService.saveEmployee(employee);
     }
 

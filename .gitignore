@@ -236,3 +236,4 @@ EmployeeGateWaySecurity/settings.gradle
 EmployeeGateWaySecurity/gradle/wrapper/gradle-wrapper.jar
 EmployeeGateWaySecurity/gradle/wrapper/gradle-wrapper.properties
 ZuulEample/**
+jwtexample/.gitignore
